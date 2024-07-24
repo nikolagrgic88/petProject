@@ -1,0 +1,199 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.form {
+  width: 80%;
+  width: 800px;
+  margin-top: px;
+  padding: 30px;
+
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #002664;
+}
+
+.formGroup {
+  display: flex;
+  justify-content: space-around;
+  height: 55px;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+.formLeft,
+.formRight {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5px;
+  width: 50%;
+}
+
+.formLeft label,
+.formRight label {
+  width: 150px;
+  text-align: left;
+  padding-right: 20px;
+  white-space: nowrap;
+}
+
+.formLeft input,
+.formRight input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  min-width: 200px;
+  width: auto;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+for input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  min-width: 204px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border: 2px solid #0041ab;
+  outline: none;
+}
+input[type="text"].errorInput:focus,
+input[type="email"].errorInput:focus,
+input[type="date"].errorInput:focus,
+input[type="number"].errorInput:focus,
+input[type="tel"].errorInput:focus,
+select.errorInput:focus {
+  border: 2px solid #d7143a;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  gap: 20px;
+}
+.saveButton,
+.backButton {
+  text-align: center;
+  font-size: 15px;
+  width: 80px;
+  background-color: #002664;
+  color: #fff;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.saveButton:hover,
+.backButton:hover {
+  background-color: #d7143a;
+}
+
+.saveButton:focus,
+.backButton:focus {
+  background-color: #d7143a;
+}
+
+.errorInput {
+  border: 2px solid #d7143a !important;
+}
+.errorContainer {
+  position: relative;
+  bottom: 30px;
+  right: 135px;
+}
+
+.errorBubble {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.555);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  white-space: nowrap;
+}
+
+.textError {
+  color: #d7143a;
+  font-size: 12px;
+}
+
+@media (max-width: 810px) {
+  .form {
+    justify-content: center;
+    position: relative;
+    width: 350px;
+    max-width: none;
+  }
+
+  .formGroup {
+    flex-direction: column;
+    align-items: center;
+    height: 210px;
+    width: 100%;
+    margin: 0;
+  }
+  .formLeft,
+  .formRight {
+    align-items: center;
+    min-width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .formLeft label,
+  .formRight label {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .formLeft input,
+  .formRight input {
+    min-width: 100%;
+
+    margin-top: 5px;
+  }
+  .innerInput {
+    min-height: 100%;
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    margin: 0;
+  }
+  .errorBubble {
+    position: sticky;
+  }
+}

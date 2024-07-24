@@ -1,0 +1,9 @@
+.pageContainer {
+  text-align: center;
+  margin-top: 150px;
+  height: 40vh;
+}
+.successMessage {
+  font-size: 24px;
+  color: #4caf50;
+}

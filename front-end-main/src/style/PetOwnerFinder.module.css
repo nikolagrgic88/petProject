@@ -1,0 +1,75 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  margin-bottom: 300px;
+}
+.container {
+  width: 500px;
+  margin-top: 50px;
+  padding: 20px 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #002664;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  color: #002664;
+  margin-bottom: 0px;
+  margin-top: 30px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.searchButton {
+  font-size: 14px;
+  background-color: #002664;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #d7143a;
+}
+
+.createButton {
+  font-size: 14px;
+  background-color: #002664;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.createButton:hover {
+  background-color: #d7143a;
+}
+.createButton:focus{
+  background-color: #d7143a;
+}
+.paragraph {
+  font-size: 16px;
+  margin: 8px 5px 10px 0px;
+}
+@media (max-width: 810px) {
+  .searchButton {
+    margin-top: 10px;
+  }
+}

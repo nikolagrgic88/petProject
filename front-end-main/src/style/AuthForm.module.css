@@ -1,0 +1,48 @@
+.formBox {
+  position: relative;
+  min-height: 650px;
+}
+.authForm {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  border: 1px solid #002664;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.authForm label,
+.authForm input,
+.authForm textarea {
+  display: block;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.authForm input,
+.authForm textarea {
+  font: inherit;
+  padding: 5px;
+}
+
+.buttonBck {
+  margin: 20px 0 20px 0;
+}
+@media (max-width: 800px) {
+  .formBox {
+    position: relative;
+    min-height: 650px;
+  }
+  .authForm {
+    max-width: 400px;
+  }
+}

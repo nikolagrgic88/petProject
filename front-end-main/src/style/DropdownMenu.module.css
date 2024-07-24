@@ -1,0 +1,36 @@
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+
+  top: 70px;
+  right: 10px;
+  left: 10px;
+  background-color: #002664;
+  z-index: 1;
+}
+
+.dropdownItem {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  color: white;
+  text-align: right;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 2px solid #2c9ccd;
+}
+.dropdownMenu a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.dropdownItem:hover {
+  background-color: #d7143a;
+}
+@media (min-width: 810px) {
+  .dropdownMenu {
+    display: none;
+  }
+}

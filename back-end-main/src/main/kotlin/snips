@@ -1,0 +1,119 @@
+package PetRegistryProject.petproject
+
+import jakarta.persistence.*
+
+import org.springframework.beans.factory.annotation.Autowired
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.ConfigurationProperties
+import org.springframework.boot.runApplication
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.format.annotation.DateTimeFormat
+import org.springframework.jdbc.datasource.DriverManagerDataSource
+import org.springframework.web.bind.annotation.*
+import org.springframework.web.servlet.config.annotation.CorsRegistry
+import org.springframework.web.servlet.config.annotation.EnableWebMvc
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+import java.sql.DriverManager
+import java.text.DateFormat
+import java.util.*
+import javax.sql.DataSource
+
+
+	@Configuration
+	class DatabaseHelper {
+		@Bean
+		@ConfigurationProperties(prefix = "spring.datasource")
+		fun dataSource(): DataSource {
+			val dataSource = DriverManagerDataSource();
+			dataSource.setDriverClassName("org.postgresql.Driver")
+			dataSource.setUrl("jdbc:postgresql://leftshift.xyz:5439/petregistry")
+			dataSource.username = "postgres"
+			dataSource.password = "irene9876"
+			return dataSource
+		}
+	}
+
+
+	interface PetOwnerRepository : JpaRepository<PetOwner, Int>
+
+	@Entity
+	@Table(name = "petowner")
+	data class PetOwner(
+		val firstname: String,
+		val lastname: String,
+		val dateofbirth: Date,
+		val homephone: Int,
+		val mobilephone: Int,
+		val streetnumber: Int,
+		val streetname: String,
+		val streettype: String,
+		val suburb: String,
+		val state: String,
+		val postcode: Int,
+		val emailaddress: String,
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		@Column(name = "userid")
+		val petownerid: Int,
+	)
+
+
+	@RestController
+	@RequestMapping("api/")
+	open class PetOwnerController {
+		@Autowired
+		var petOwnerRepo: PetOwnerRepository? = null;
+
+		@PostMapping("/addpetowner")
+		fun addPetOwnernew(
+			@RequestParam firstname: String,
+			@RequestParam lastname: String,
+			@RequestParam dateofbirth : Date,
+			@RequestParam homephone: Int,
+			@RequestParam mobilephone: Int,
+			@RequestParam streetnumber: Int,
+			@RequestParam streetname: String,
+			@RequestParam streettype: String,
+			@RequestParam suburb: String,
+			@RequestParam state: String,
+			@RequestParam postcode: Int,
+			@RequestParam emailaddress: String
+
+		): String {
+			val petOwner = PetOwner(
+				firstname,
+				lastname,
+				dateofbirth,
+				homephone,
+				mobilephone,
+				streetnumber,
+				streetname,
+				streettype,
+				suburb,
+				state,
+				postcode,
+				emailaddress,
+				0,
+			)
+			if (petOwnerRepo != null) {
+				petOwnerRepo?.save(petOwner)
+				return "Pet owner has been saved"
+			}
+			return petOwner.firstname;
+		}
+	}
+
+
+
+
+	@SpringBootApplication
+	class PetprojectApplication
+
+	fun main(args: Array<String>) {
+		runApplication<PetprojectApplication>(*args)
+
+
+	}

@@ -1,0 +1,90 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.detailsContainer {
+  width: 80%;
+  max-width: 850px;
+  margin-top: 20px;
+  padding: 30px 0 30px 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #002664;
+}
+
+.detailGroup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  min-width: 150px;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.groupLeft {
+  min-width: 50%;
+}
+.groupRight {
+  min-width: 50%;
+}
+label {
+  font-weight: bold;
+  width: 40%;
+  margin-right: 20px;
+}
+
+span {
+  width: 60%;
+  font-weight: normal;
+}
+
+.backButton {
+  text-align: center;
+  font-size: 15px;
+  width: 80px;
+  background-color: #002664;
+  color: #fff;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+.backButton:hover {
+  background-color: #d7143a;
+}
+
+.linkBtn {
+  margin-left: -5px;
+}
+@media (max-width: 810px) {
+  .groupLeft {
+    min-width: 250px;
+  }
+  .groupRight {
+    min-width: 250px;
+  }
+}
+@media (max-width: 680px) {
+  .innerContainer {
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  .detailsContainer {
+    max-width: 400px;
+  }
+  .linkBtn {
+    margin-left: 10px;
+  }
+}
